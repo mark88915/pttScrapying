@@ -20,11 +20,14 @@ def six_Hour_A_ACIN():
     day = str(toNow.day)
     today = month+'/'+day
 
+    allIWant = ""
 
     for i in range(len(title)):
         if(date[i].text == today and title[i].text[1:5] == "[洽特]"):
-            print(title[i].text, date[i].text, 'www.ptt.cc' + link[i].get('href'))
+            allIWant += title[i].text + date[i].text + ' www.ptt.cc' + link[i].get('href') + "\n"
+            #print(title[i].text + date[i].text + ' www.ptt.cc' + link[i].get('href'))
 
+    return allIWant
 six_Hour_A_ACIN()
 
 '''
