@@ -29,12 +29,3 @@ def six_Hour_A_ACIN():
 
     return allIWant
 six_Hour_A_ACIN()
-
-'''
-def search():
-    #取得網頁內容
-    request = requests.get("https://www.ptt.cc/bbs/index.html")
-    soup = BeautifulSoup(request.content, 'html.parser')
-
-    board = soup.find_all('div', class_ = "board-name")
-'''
