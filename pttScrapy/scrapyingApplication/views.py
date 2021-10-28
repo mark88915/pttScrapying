@@ -31,7 +31,7 @@ def callback(request):
             if isinstance(event, MessageEvent):  # 如果有訊息事件
                 line_bot_api.reply_message(  
                     event.reply_token,
-                    TextSendMessage(text=searchAndScrapy.showTheSearchBoard(event.message.text))
+                    TextSendMessage(text=searchAndScrapy.showTheSearchBoard(event.message.text.decode('unicode_escape')))
                 )
         return HttpResponse()
     else:
