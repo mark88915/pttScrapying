@@ -20,7 +20,8 @@ def checkBoardList():
     
     return allIWant
 
-def showTheSearchBoard(boardName = "Gossiping"):
+def showTheSearchBoard(boardName):
+
     #取得網頁內容
     my_header = {'cookie': 'over18=1;'} #通過18禁按鈕驗證
     request = requests.get('https://www.ptt.cc/bbs/' + boardName + '/index.html',headers=my_header)
@@ -50,5 +51,9 @@ def showTheSearchBoard(boardName = "Gossiping"):
     #列出
     for i in range(len(title)):
         allIWant += title[i].text + date[i].text + ' www.ptt.cc' + link[i].get('href') + "\n"
+
+    #檢查是否有此看板
+    if(len(allIWant) == 0):
+        allIWant = "※ 不存在此看板或看板名稱大小寫有誤！"
 
     return allIWant
