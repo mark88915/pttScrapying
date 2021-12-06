@@ -29,10 +29,16 @@ def callback(request):
 
         for event in events:
             if isinstance(event, MessageEvent):  # 如果有訊息事件
-                line_bot_api.reply_message(  
-                    event.reply_token,
-                    TextSendMessage(text=searchAndScrapy.showTheSearchBoard(event.message.text))
-                )
+                if(event.message.text == "檢查看板"):
+                    line_bot_api.reply_message(  
+                        event.reply_token,
+                        TextSendMessage(text=searchAndScrapy.checkBoardList())
+                    )
+                else:
+                    line_bot_api.reply_message(  
+                        event.reply_token,
+                        TextSendMessage(text=searchAndScrapy.showTheSearchBoard(event.message.text))
+                    )
         return HttpResponse()
     else:
         return HttpResponseBadRequest()
