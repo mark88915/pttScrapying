@@ -37,7 +37,7 @@ def callback(request):
                 elif(event.message.text == "說明"):
                     line_bot_api.reply_message(  
                         event.reply_token,
-                        TextSendMessage(text="輸入'檢查看板'可以查看所有熱門看板名稱\n輸入欲查詢的看板名稱可查詢該看本的文章")
+                        TextSendMessage(text="輸入'檢查看板'可以查看所有熱門看板名稱\n輸入欲查詢的看板名稱可查詢該看板的文章")
                     )
                 else:
                     line_bot_api.reply_message(  
