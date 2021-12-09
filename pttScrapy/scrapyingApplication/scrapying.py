@@ -42,7 +42,7 @@ def six_Hour_A_ACIN():
             allIWant += title[i].text + date[i].text + ' www.ptt.cc' + link[i].get('href') + "\n"
 
     if(len(allIWant) == 0):
-        return "今天還沒有新的洽特！"
+        allIWant = "今天還沒有新的洽特！"
 
     return allIWant
 six_Hour_A_ACIN()
