@@ -41,5 +41,8 @@ def six_Hour_A_ACIN():
         if(date[i].text == today and (title[i].text[1:5] == "[洽特]" or title[i].text == "今泉")):
             allIWant += title[i].text + date[i].text + ' www.ptt.cc' + link[i].get('href') + "\n"
 
+    if(len(allIWant) == 0):
+        return "今天還沒有新的洽特！"
+
     return allIWant
 six_Hour_A_ACIN()
