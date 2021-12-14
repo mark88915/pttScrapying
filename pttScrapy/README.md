@@ -1,3 +1,2 @@
 # pttScrapy
-Scrapy for ptt
-架設於heroku
+爬蟲檔案放置於scrapyingApplication資料夾下
