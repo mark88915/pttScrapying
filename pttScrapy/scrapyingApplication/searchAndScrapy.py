@@ -50,7 +50,7 @@ def showTheSearchBoard(boardName):
 
     #列出
     for i in range(len(title)):
-        allIWant += title[i].text + date[i].text + ' www.ptt.cc' + link[i].get('href') + "\n"
+        allIWant += title[i].text + date[i].text.strip() + ' www.ptt.cc' + link[i].get('href') + "\n"
 
     #檢查是否有此看板
     if(len(allIWant) == 0):

@@ -38,8 +38,8 @@ def six_Hour_A_ACIN():
 
     #列出
     for i in range(len(title)):
-        if(date[i].text == today and (title[i].text[1:5] == "[洽特]" or title[i].text == "今泉")):
-            allIWant += title[i].text + date[i].text + ' www.ptt.cc' + link[i].get('href') + "\n"
+        if(date[i].text.strip() == today and (title[i].text[1:5] == "[洽特]" or title[i].text == "今泉")):
+            allIWant += title[i].text + date[i].text.strip() + ' www.ptt.cc' + link[i].get('href') + "\n"
 
     if(len(allIWant) == 0):
         allIWant = "今天還沒有新的洽特！"
