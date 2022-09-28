@@ -38,6 +38,7 @@ def six_Hour_A_ACIN():
 
     #列出
     for i in range(len(title)):
+        #日期條件式新增.strip()，將日期中多餘的空格移除避免影響判斷
         if(date[i].text.strip() == today and (title[i].text[1:5] == "[洽特]" or title[i].text == "今泉")):
             allIWant += title[i].text + date[i].text.strip() + ' www.ptt.cc' + link[i].get('href') + "\n"
 
